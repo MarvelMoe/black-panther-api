@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Let's Comment</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 inmiddle">
+
+                <h1>The Comment Maker</h1>
+                <br>
+                <form>
+                    <input id="inputHere" placeholder="Your Name">
+                    <br>
+                    <br>
+                    <textarea id="inputHere2" rows="3" cols="50" placeholder="Your Comment"></textarea>
+                    <br>
+                    <button type="button" onclick="getDate();getInfo()" class="button">
+                        Submit
+                    </button>
+
+                    <button type="button" onclick="deleteInfo()" class="button2">
+                        Delete</button>
+            </div>
+
+            <div class="col-md-4">
+                <div id="whiteboard">
+                    <img src="img/whiteboard.png">
+
+                    <ul id="sweetlist">
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div id="guest" class="left">
+                    <h4>Guest Moderator</h4>
+                    <img src="Img/war.png">
+                </div>
+            </div>
+
+
+
+            </form>
+
+
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+</body>
+
+</html>

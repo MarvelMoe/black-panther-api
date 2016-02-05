@@ -1,0 +1,129 @@
+
+* {
+	margin: 0px;
+}
+
+.coolclass {
+	list-style-type: none;
+	font-size: 20px;
+	display: inline;
+	font-family: 'Poiret One', cursive;
+}
+
+.inmiddle {
+	text-align: left;
+	margin-top: 1%;
+	font-family: 'Homenaje', sans-serif;
+}
+
+#guest {
+	margin-top: 7%;
+	margin-right: 4%;
+	float: right;
+	display: inline;
+	
+}
+
+#guest img {
+	width: 200px;
+	vertical-align: middle;
+}
+
+#sweetlist {
+    padding-left: 2%;
+    position: relative;
+    bottom: 724px;
+    left: 50px;
+}
+
+.button {
+    color: #fff;
+    text-decoration: none;
+    background-color: #4d4d4d;
+    padding: 4px;
+    border-radius: 8px;
+    box-shadow: 0px 9px 0px #4d4d4d, 0px 9px 25px #4d4d4d;
+	width: 100px;	
+}
+
+
+.button2 {
+    color: #fff;
+    text-decoration: none;
+    background-color: #A80000 ;
+    padding: 4px;
+    border-radius: 8px;
+    box-shadow: 0px 9px 0px #A80000 , 0px 9px 25px #A80000 ;
+	width: 100px;	
+}
+
+
+.button2:active, .button:active {
+    box-shadow: 0px 0px 0px #16a085;
+}
+
+
+
+#whiteboard img {
+    width: 420px;
+    height: 800px
+}
+
+textarea, input {
+	border-radius: 5px;
+
+}
+
+ul p:nth-child(odd) {
+    color: #00ff00;
+    font-weight: bold;
+    width: 50%
+}
+
+
+ul p:nth-child(even) {
+    color: #0066ff;
+    font-weight: bold;
+    width: 50%
+}
+
+/*Media Queries Below*/
+@media screen and (max-width: 460px) {
+ 
+    #whiteboard img {
+  width:300px;
+  }
+ .inmiddle h1:after {
+  display: none
+  } 
+
+}
+
+@media screen and  (max-width: 676px) {
+     #guest {
+    display: none;
+  }
+  .inmiddle h1:after {
+      content:".... The Moderator has left ";
+      font-size: 16px
+    }
+}
+
+@media screen and  (max-width: 992px) {
+	 #sweetlist {
+    position: relative;
+     bottom: 744px;
+    left: 24px;
+    margin-top: 20px;
+    margin-left: 10px
+  }
+  #guest{
+    position: relative; 
+    bottom:1100px;
+  }
+  .inmiddle {
+      margin-left: 20px;
+  }
+}
+
+
