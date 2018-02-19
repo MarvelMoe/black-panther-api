@@ -1,15 +1,10 @@
-document.getElementById('getData').addEventListener('click', getMarvelData);
-document.getElementById('clearData').addEventListener('click', clearBoard);
-
-
 function getMarvelData() {
 
     let dateOne = document.getElementById('dateFirst').value,
         dateTwo = document.getElementById('dateSecond').value;
 
     fetch('https://gateway.marvel.com:443/v1/public/comics?format=comic&formatType=comic&noVariants=true&dateRange=' + dateOne + '-01-01%2C' + dateTwo + '-01-02&characters=1009187&limit=50&apikey=cb6378a5a3f12f56c38a8325fbfa0dcb')
-        .then(
-            function(response) {
+        .then(function(response) {
                 if (response.status !== 200) {
                     console.log('Looks like there was a problem. Status Code: ' +
                         response.status);
@@ -28,10 +23,10 @@ function getMarvelData() {
                         // Appends the second parameter(element) to the first
                         return parent.appendChild(element);
                     }
-
-                    let container = document.getElementById('result');
-
-                    let marvelData = data.data.results
+                      
+                    // Add results to container in the end
+                    let container = document.getElementById('result'),
+                        marvelData = data.data.results
 
                     // Map through the results and run code for each
                     return marvelData.map(function(marvel) {
@@ -45,20 +40,16 @@ function getMarvelData() {
                         img.src = marvel.thumbnail.path + '/standard_fantastic.jpg';
                         par.innerHTML = `${marvel.title}`;
                         div.classList.add("card");
-
                         append(div, img);
                         append(div, par);
                         append(container, div);
                     })
-
+                  
+                 // Spit out results
                     output = marvelData
-
-
-
-
-                });
-            }
-        )
+                })
+            })
+        
         .catch(function(err) {
             console.log('Fetch Error :-S', err);
         });
@@ -69,3 +60,6 @@ function clearBoard() {
   // Removes everything from the screen
     document.getElementById("result").classList.add("hider")
 }
+
+document.getElementById('getData').addEventListener('click', getMarvelData);
+document.getElementById('clearData').addEventListener('click', clearBoard);
