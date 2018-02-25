@@ -11,6 +11,7 @@ function getMarvelData() {
                 if (response.status !== 200) {
                     console.log('Looks like there was a problem. Status Code: ' +
                         response.status);
+
                     return;
                 }
 
@@ -53,11 +54,10 @@ function getMarvelData() {
                             append(container, div);
                         })
                   
-                 // Spit out results
-                    output = marvelData
+                    // Spit out results
+                    output = marvelData;
+ 
                 })
-
-
                
             })
         
@@ -68,14 +68,5 @@ function getMarvelData() {
 }
 
 
-
-function loadingData() {
- // Adds loader before data arrives
-document.getElementById('icon').style.display = 'block';
-}
-
-document.getElementById('getData').addEventListener('click', function () {
- getMarvelData();
- loadingData();
-});
+document.getElementById('getData').addEventListener('click', getMarvelData);
  
