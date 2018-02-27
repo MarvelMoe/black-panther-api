@@ -1,18 +1,18 @@
-
-
 function getMarvelData() {
 
     let dateOne = document.getElementById('dateFirst').value,
         dateTwo = document.getElementById('dateSecond').value;
 
 
-    fetch('https://gateway.marvel.com:443/v1/public/comics?format=comic&formatType=comic&noVariants=true&dateRange=' + dateOne + '-01-01%2C' + dateTwo + '-01-02&characters=1009187&limit=50&apikey=cb6378a5a3f12f56c38a8325fbfa0dcb')
+    fetch('https://gateway.marvel.com:443/v1/public/comics?format=comic&formatType=comic&noVariants=true&dateRange=' + dateOne + '-01-01%2C' + dateTwo + '-01-02&characters=1009187&limit=100&apikey=cb6378a5a3f12f56c38a8325fbfa0dcb')
         .then(function(response) {
                 if (response.status !== 200) {
                     console.log('Looks like there was a problem. Status Code: ' +
                         response.status);
+
                     return;
                 }
+
 
                 // Examines the data in the response
                 response.json().then(function(data) {
@@ -32,11 +32,16 @@ function getMarvelData() {
                     let container = document.getElementById('result'),
                         marvelData = data.data.results
 
+
                         // Add animation to reveal data
                           container.classList.add("revealer");
 
+
                         // Map through the results and run code for each
                         return marvelData.map(function(marvel) {
+
+                             // If results taking awhile...show loader
+                            document.getElementById('icon').style.display = 'block';
 
                             // Create 3 elements
                             let div = createNode('div'),
@@ -52,12 +57,13 @@ function getMarvelData() {
                             append(div, par);
                             append(container, div);
                         })
+
+                           
                   
-                 // Spit out results
-                    output = marvelData
+                    // Spit out results
+                    output = marvelData;
+ 
                 })
-
-
                
             })
         
@@ -67,15 +73,7 @@ function getMarvelData() {
 
 }
 
+ 
 
-
-function loadingData() {
- // Adds loader before data arrives
-document.getElementById('icon').style.display = 'block';
-}
-
-document.getElementById('getData').addEventListener('click', function () {
- getMarvelData();
- loadingData();
-});
+document.getElementById('getData').addEventListener('click', getMarvelData);
  

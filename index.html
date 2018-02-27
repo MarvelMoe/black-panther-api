@@ -81,18 +81,20 @@
     </div>
     <div class="container">
 
-      <div class="loading_icon" id="icon"></div>
+        <div id="icon" class="loading_icon"></div>
+
 
         <div class="data-box">
             <h2 class="title">API Comic Search</h2>
             <p class="text">Fetches all comics that feature Black Panther within date ranges you specify</p>
-            <input type="text" id="dateFirst" placeholder="Ex: 1965">
-            <input type="text" id="dateSecond" placeholder="Ex: 2018">
-            <input type="button" value="GET DATA" id="getData" class="btn btn-data"/>
+            <input type="number" id="dateFirst" value="1966">
+            <input type="number" id="dateSecond" value="2006">
+            <input type="submit" value="GET DATA" id="getData" class="btn btn-data" />
         </div>
 
         <div id="result" class="grid">
-         </div>
+            <!-- Results here -->
+        </div>
 
     </div>
 
